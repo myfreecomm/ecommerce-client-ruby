@@ -1,5 +1,5 @@
-require 'spec_helper'
+require "spec_helper"
 
-describe 'Ecommerce' do
+describe "Ecommerce" do
   subject { Ecommerce.new }
 end
