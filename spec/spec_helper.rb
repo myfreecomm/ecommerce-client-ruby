@@ -2,6 +2,10 @@ require "ecommerce"
 require "pry"
 require "vcr"
 
+$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+
+Dir["spec/support/**/*.rb"].each { |f| load f }
+
 VCR.configure do |config|
   config.cassette_library_dir = "spec/vcr_cassettes"
   config.hook_into :typhoeus

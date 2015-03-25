@@ -5,6 +5,9 @@ require "ecommerce/version"
 require "ecommerce/configuration"
 require "ecommerce/client"
 
+require "ecommerce/resources/base"
+require "ecommerce/resources/order"
+
 module Ecommerce
   def self.configuration
     @configuration ||= Configuration.new
