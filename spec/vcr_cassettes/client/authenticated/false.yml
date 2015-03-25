@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ecommerce Ruby Client v0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic RkFLRS1UT0tFTjpGQUtFLVNFQ1JFVA==
+  response:
+    status:
+      code: 403
+      message: FORBIDDEN
+    headers:
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Content-Language:
+      - pt-br
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 25 Mar 2015 19:03:42 GMT
+      Server:
+      - nginx/1.6.2
+      Vary:
+      - Authenticate, Accept, Accept-Language, Cookie
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"detail": "You do not have permission to access this resource. You
+        may need to login or otherwise authenticate the request."}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/
+  recorded_at: Wed, 25 Mar 2015 19:03:42 GMT
+recorded_with: VCR 2.9.3

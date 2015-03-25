@@ -10,9 +10,13 @@ describe Ecommerce do
       Ecommerce.configure do |c|
         c.url = "http://some/where"
         c.user_agent = "My App v1.0"
+        c.token = "My-Token"
+        c.secret = "My-Secret"
       end
-      expect(Ecommerce.configuration.url).to eq "http://some/where"
-      expect(Ecommerce.configuration.user_agent).to eq "My App v1.0"
+      expect(Ecommerce.configuration.url).to eq("http://some/where")
+      expect(Ecommerce.configuration.user_agent).to eq("My App v1.0")
+      expect(Ecommerce.configuration.token).to eq("My-Token")
+      expect(Ecommerce.configuration.secret).to eq("My-Secret")
     end
 
     it "uses a singleton object for the configuration values" do
@@ -35,7 +39,7 @@ describe Ecommerce do
   end
 
   describe ".client" do
-    subject { described_class.client("MYTOKEN", "MYSECRET") }
+    subject { described_class.client }
 
     it "returns an instance of Ecommerce::Client" do
       expect(subject).to be_a(Ecommerce::Client)

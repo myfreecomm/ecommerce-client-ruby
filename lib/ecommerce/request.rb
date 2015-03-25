@@ -24,7 +24,6 @@ module Ecommerce
         params:           args[:params],
         body:             body,
         headers:          headers,
-        userpwd:          token,
         accept_encoding:  "gzip"
       }.reject {|k,v| v.nil?}
     end
@@ -33,9 +32,10 @@ module Ecommerce
       headers = args.fetch(:headers) { {} }
 
       {
-        "Accept"        => "application/json",
-        "Content-Type"  => "application/json",
-        "User-Agent"    => args[:user_agent]
+        "Accept"         => "application/json",
+        "Content-Type"   => "application/json",
+        "User-Agent"     => args[:user_agent],
+        "Authorization" => "Basic #{args[:authorization_hash]}"
       }.merge(headers)
     end
 
@@ -43,10 +43,6 @@ module Ecommerce
       body = args[:body]
       body = MultiJson.dump(body) if body.is_a?(Hash)
       body
-    end
-
-    def token
-      "#{args[:token]}:x"
     end
 
   end
