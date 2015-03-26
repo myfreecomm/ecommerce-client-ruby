@@ -1,7 +1,6 @@
 module Ecommerce
   module Resources
     class Base
-
       def initialize(attribute={})
         attribute.each do |k, v|
           set_attribute(k, v)

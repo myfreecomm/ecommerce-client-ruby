@@ -15,6 +15,12 @@ module Ecommerce
         end
       end
 
+      def self.list(slug, page = 1, limit = 20)
+        client.get("/api/orders/#{slug}/", { body: {page: page, limit: limit} }) do |response|
+          Ecommerce::Resources::OrderCollection.build(response)
+        end
+      end
+
       private
 
       def self.build_order(attributes)
