@@ -26,11 +26,21 @@ module Ecommerce
         end
       end
 
+      def self.destroy(order_id, slug)
+        client.delete("/api/orders/#{slug}/#{order_id}/") do |response|
+          build_order(response)
+        end
+      end
+
+      def destroy
+        self.class.destroy(number, plan_slug)
+      end
+
       private
 
       def self.build_order(response)
         order_attributes = parsed_body(response)
-        self.new(order_attributes)
+        order_attributes.empty? ? {} : self.new(order_attributes)
       end
     end
   end

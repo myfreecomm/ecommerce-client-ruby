@@ -125,4 +125,31 @@ describe Ecommerce::Resources::Order do
       end
     end
   end
+
+  describe '.destroy', vcr: true do
+    context 'when success' do
+      subject { described_class.destroy(2609, 'rexpense-custom-monthly-brl-5250') }
+
+      it 'returns empty body' do
+        expect(subject).to be_empty
+      end
+    end
+
+    context 'when not found' do
+      subject { described_class.destroy(2609, 'wrong-slug') }
+
+      it 'raises NotFound' do
+        expect{ subject }.to raise_error(Ecommerce::RequestError)
+      end
+    end
+  end
+
+  describe '#destroy' do
+    subject { described_class.new({ number: 2609, plan_slug: 'rexpense-custom-monthly-brl-5250' }) }
+
+    it 'invokes Ecommerce::Resources::Order.destroy' do
+      expect(Ecommerce::Resources::Order).to receive(:destroy).with(2609, 'rexpense-custom-monthly-brl-5250')
+      subject.destroy
+    end
+  end
 end
