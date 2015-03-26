@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2609/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ecommerce Ruby Client v0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cDlhWXNSU0l2TTo0MWUxMzc2OGI0N2Q1NTM0MTdiNDQxYjg2M2Jh
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Allow:
+      - GET, PUT, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - pt-br
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 26 Mar 2015 17:23:09 GMT
+      ETag:
+      - '"-1805244963468732435"'
+      Server:
+      - nginx/1.6.2
+      Vary:
+      - Authenticate, Accept, Accept-Language, Cookie
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"is_paid": false, "address_number": null, "plan_change_urls": {},
+        "activation_expired": false, "number": 2609, "address_state": null, "global_account":
+        "e5732007-7989-4372-8e72-9ec8cf6ee046", "api_url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2609/",
+        "is_trial": false, "document_number": null, "checkout_url": "http://sandbox.ecommerce.myfreecomm.com.br/rexpense-custom-monthly-brl-5250/2609/checkout/",
+        "active_until": null, "charge_day": 25, "address_quarter": null, "activated_at":
+        null, "is_active": false, "user_code": "", "address": null, "is_recurring":
+        true, "address_city": null, "plan_slug": "rexpense-custom-monthly-brl-5250",
+        "address_complement": null, "discounts_url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2609/discounts/",
+        "created_at": "2015-03-25 17:55:32", "adjustments_url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2609/adjustments/",
+        "next_payment_at": null, "amount": "52.50", "client_email": "jaime.lannister@mailinator.com",
+        "zip_code": null, "client_name": "", "invoices_url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2609/invoices/"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2609/
+  recorded_at: Thu, 26 Mar 2015 17:23:09 GMT
+recorded_with: VCR 2.9.3

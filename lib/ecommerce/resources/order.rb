@@ -10,8 +10,7 @@ module Ecommerce
 
       def self.create(slug, params)
         client.post("/api/orders/#{slug}/", { body: params }) do |response|
-          order_attributes = parsed_body(response)
-          build_order(order_attributes)
+          build_order(response)
         end
       end
 
@@ -21,10 +20,17 @@ module Ecommerce
         end
       end
 
+      def self.find(order_id, slug)
+        client.get("/api/orders/#{slug}/#{order_id}/") do |response|
+          build_order(response)
+        end
+      end
+
       private
 
-      def self.build_order(attributes)
-        self.new(attributes)
+      def self.build_order(response)
+        order_attributes = parsed_body(response)
+        self.new(order_attributes)
       end
     end
   end
