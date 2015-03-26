@@ -1,18 +1,28 @@
 module Ecommerce
   module Resources
     class Base
-      attr_reader :client
 
-      def initialize(client)
-        @client = client
+      def initialize(attribute={})
+        attribute.each do |k, v|
+          set_attribute(k, v)
+        end
+      end
+
+      def self.client
+        Ecommerce.client
       end
 
       private
 
-      def parsed_body(response)
+      def self.parsed_body(response)
         MultiJson.load(response.body)
       rescue MultiJson::ParseError
         {}
+      end
+
+      def set_attribute(key, value)
+        object_value = Ecommerce::AttributeHandler.handle(value)
+        instance_variable_set("@#{key}", object_value)
       end
     end
   end

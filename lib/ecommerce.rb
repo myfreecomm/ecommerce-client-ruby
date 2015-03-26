@@ -4,6 +4,7 @@ require "multi_json"
 require "ecommerce/version"
 require "ecommerce/configuration"
 require "ecommerce/client"
+require "ecommerce/attribute_handler"
 
 require "ecommerce/resources/base"
 require "ecommerce/resources/order"
