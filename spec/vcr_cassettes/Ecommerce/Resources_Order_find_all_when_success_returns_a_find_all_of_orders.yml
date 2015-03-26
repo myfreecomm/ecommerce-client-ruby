@@ -4,8 +4,8 @@ http_interactions:
     method: get
     uri: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"page":1,"limit":20}'
     headers:
       User-Agent:
       - Ecommerce Ruby Client v0.0.1
@@ -31,9 +31,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 26 Mar 2015 14:24:17 GMT
+      - Thu, 26 Mar 2015 17:18:05 GMT
       Expires:
-      - Thu, 26 Mar 2015 11:24:17
+      - Thu, 26 Mar 2015 14:18:05
       Link:
       - "<http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/?page=1>;
         rel=last, <http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/?page=1>;
@@ -95,5 +95,5 @@ http_interactions:
     http_version: '1.1'
     adapter_metadata:
       effective_url: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/
-  recorded_at: Thu, 26 Mar 2015 14:21:56 GMT
+  recorded_at: Thu, 26 Mar 2015 17:18:05 GMT
 recorded_with: VCR 2.9.3

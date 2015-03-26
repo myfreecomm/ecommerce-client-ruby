@@ -53,15 +53,15 @@ describe Ecommerce::Resources::Order do
     end
   end
 
-  describe '.list', vcr: true do
+  describe '.find_all', vcr: true do
     let(:params) { { global_account: 'e5732007-7989-4372-8e72-9ec8cf6ee046',
                      client_email: 'jaime.lannister@mailinator.com',
                      identity: '8923199e-6c43-415a-bbd1-2e302fdf8d96' } }
 
     context 'when success' do
-      subject { described_class.list('rexpense-custom-monthly-brl-5250') }
+      subject { described_class.find_all('rexpense-custom-monthly-brl-5250') }
 
-      it 'returns a list of orders' do
+      it 'returns a find_all of orders' do
         expect(subject.class).to eq(Ecommerce::Resources::OrderCollection)
         expect(subject.orders.first.plan_slug).to eq("rexpense-custom-monthly-brl-5250")
         expect(subject.orders.first.class).to eq(Ecommerce::Resources::Order)
@@ -70,11 +70,14 @@ describe Ecommerce::Resources::Order do
     end
 
     context 'when not found' do
-      subject { described_class.list('wrong-slug') }
+      subject { described_class.find_all('wrong-slug') }
 
       it 'raises NotFound' do
         expect{subject}.to raise_error(Ecommerce::RequestError)
       end
     end
+  end
+
+  describe '.find' do
   end
 end

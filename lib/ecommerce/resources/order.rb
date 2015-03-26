@@ -15,7 +15,7 @@ module Ecommerce
         end
       end
 
-      def self.list(slug, page = 1, limit = 20)
+      def self.find_all(slug, page = 1, limit = 20)
         client.get("/api/orders/#{slug}/", { body: {page: page, limit: limit} }) do |response|
           Ecommerce::Resources::OrderCollection.build(response)
         end
