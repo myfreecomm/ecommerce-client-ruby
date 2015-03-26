@@ -6,10 +6,10 @@ require 'ecommerce/version'
 Gem::Specification.new do |spec|
   spec.name          = "ecommerce-client"
   spec.version       = Ecommerce::VERSION
-  spec.authors       = ["Rafael B. Tauil"]
-  spec.email         = ["rafael@tauil.com.br"]
-  spec.summary       = %q{Official Ruby client for the Ecommerce API.}
-  spec.description   = %q{Official Ruby client for the Ecommerce API. Ecommerce is a solution to control payments for your products.}
+  spec.authors       = ["Rafael B. Tauil", "Eduardo Hertz"]
+  spec.email         = ["rafael@tauil.com.br", "eduardohertz@gmail.com"]
+  spec.summary       = %q{Official Ruby client for Myfreecomm's Ecommerce API.}
+  spec.description   = %q{Official Ruby client for Myfreecomm's Ecommerce API. Ecommerce is a solution to control payments for your products.}
   spec.homepage      = "https://github.com/myfreecomm/ecommerce-client-ruby"
   spec.license       = "MIT"
 
