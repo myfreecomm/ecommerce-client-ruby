@@ -2,8 +2,14 @@
 *.rbc
 .bundle
 .config
-coverage
+.yardoc
+.env
+.envrc
+Gemfile.lock
 InstalledFiles
+_yardoc
+coverage
+doc/
 lib/bundler/man
 pkg
 rdoc
@@ -11,8 +17,15 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
-
-# YARD artifacts
-.yardoc
-_yardoc
-doc/
+vendor
+*.bundle
+*.so
+*.o
+*.a
+mkmf.log
+*.swp
+*.swo
+*~
+.ruby-gemset
+.ruby-version
+doc
