@@ -6,7 +6,7 @@ A Ruby client for Myfreecomm's Ecommerce REST API
 
 Add this line to your application's Gemfile:
 
-    gem 'ecommerce-client-ruby'
+    gem 'ecommerce-client'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install ecommerce-client-ruby
+    $ gem install ecommerce-client
 
 ## Usage
 
