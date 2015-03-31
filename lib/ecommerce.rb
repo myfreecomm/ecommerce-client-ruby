@@ -8,7 +8,7 @@ require "ecommerce/attribute_handler"
 
 require "ecommerce/resources/base"
 require "ecommerce/resources/order"
-require "ecommerce/resources/order_collection"
+require "ecommerce/resources/collection"
 
 module Ecommerce
   def self.configuration

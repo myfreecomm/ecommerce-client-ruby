@@ -39,7 +39,7 @@ Ecommerce endpoints are represented as Resources. To check the list of all avail
 ```ruby
 # listing orders of a plan
 Ecommerce::Resources::Order.find_all('specific-plan')
-=> #<Ecommerce::Resources::OrderCollection:0x000000028739b0...>
+=> #<Ecommerce::Resources::Collection:0x000000028739b0...>
 ```
 
 ## Contributing

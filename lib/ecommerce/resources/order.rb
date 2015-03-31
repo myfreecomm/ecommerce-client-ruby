@@ -32,7 +32,7 @@ module Ecommerce
       end
 
       #
-      # Lists all Orders of a slug and return a collection with orders and pagination information (represented by Ecommerce::Resources::OrderCollection)
+      # Lists all Orders of a slug and return a collection with orders and pagination information (represented by Ecommerce::Resources::Collection)
       #
       # [API]
       #   Method: <tt>GET /api/orders/:slug/</tt>
@@ -42,7 +42,7 @@ module Ecommerce
 
       def self.find_all(slug, page = 1, limit = 20)
         client.get("/api/orders/#{slug}/", { body: { page: page, limit: limit } }) do |response|
-          Ecommerce::Resources::OrderCollection.build(response)
+          Ecommerce::Resources::Collection.build(response)
         end
       end
 
