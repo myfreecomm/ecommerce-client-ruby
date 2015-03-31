@@ -41,7 +41,7 @@ module Ecommerce
       #
 
       def self.find_all(slug, page = 1, limit = 20)
-        client.get("/api/orders/#{slug}/", { body: {page: page, limit: limit} }) do |response|
+        client.get("/api/orders/#{slug}/", { body: { page: page, limit: limit } }) do |response|
           Ecommerce::Resources::OrderCollection.build(response)
         end
       end
@@ -76,8 +76,19 @@ module Ecommerce
         end
       end
 
-      def destroy
-        self.class.destroy(number, plan_slug)
+      #
+      # Updates an Order client information
+      #
+      # [API]
+      #   Method: <tt>PUT /api/orders/:slug/:order_id/</tt>
+      #
+      #   Documentation for available and required fields: http://myfreecomm.github.io/passaporte-web/ecommerce/api/orders.html#put-api-orders-slug-id
+      #
+
+      def self.update(order_id, slug, order_params={})
+        client.put("/api/orders/#{slug}/#{order_id}/", { body: order_params }) do |response|
+          build_order(response)
+        end
       end
 
       private

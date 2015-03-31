@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2608/
+    body:
+      encoding: UTF-8
+      string: '{"document_number":"976.305.273-49","identity":"8923199e-6c43-415a-bbd1-2e302fdf8d96","client_email":"jaime.lannister@mailinator.com","client_name":"Jaime
+        Lannister KingSlayer"}'
+    headers:
+      User-Agent:
+      - Ecommerce Ruby Client v0.0.2
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cDlhWXNSU0l2TTo0MWUxMzc2OGI0N2Q1NTM0MTdiNDQxYjg2M2Jh
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Allow:
+      - GET, PUT, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - pt-br
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 31 Mar 2015 21:08:17 GMT
+      ETag:
+      - '"-4936528050792143463"'
+      Server:
+      - nginx/1.6.2
+      Vary:
+      - Authenticate, Accept, Accept-Language, Cookie
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"is_paid": false, "address_number": null, "plan_change_urls": {"rexpense-beta":
+        "http://sandbox.ecommerce.myfreecomm.com.br/rexpense-custom-monthly-brl-5250/2608/change/rexpense-beta/"},
+        "activation_expired": false, "number": 2608, "address_state": "", "global_account":
+        "e5732007-7989-4372-8e72-9ec8cf6ee046", "api_url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2608/",
+        "is_trial": false, "document_number": "97630527349", "checkout_url": "http://sandbox.ecommerce.myfreecomm.com.br/rexpense-custom-monthly-brl-5250/2608/checkout/",
+        "active_until": null, "charge_day": 25, "address_quarter": null, "activated_at":
+        null, "is_active": false, "user_code": "", "address": null, "is_recurring":
+        true, "address_city": null, "plan_slug": "rexpense-custom-monthly-brl-5250",
+        "address_complement": "", "discounts_url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2608/discounts/",
+        "created_at": "2015-03-25 17:54:42", "adjustments_url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2608/adjustments/",
+        "next_payment_at": null, "amount": "52.50", "client_email": "jaime.lannister@mailinator.com",
+        "zip_code": null, "client_name": "Jaime Lannister KingSlayer", "invoices_url":
+        "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2608/invoices/"}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2608/
+  recorded_at: Tue, 31 Mar 2015 21:08:19 GMT
+recorded_with: VCR 2.9.3
