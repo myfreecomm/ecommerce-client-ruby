@@ -5,7 +5,7 @@
 
 # Ecommerce Client
 
-A Ruby client for Myfreecomm's Ecommerce REST API
+A Ruby client for [Myfreecomm's Ecommerce REST API](http://myfreecomm.github.io/passaporte-web/ecommerce/api/index.html).
 
 ## Installation
 
@@ -21,9 +21,26 @@ Or install it yourself as:
 
     $ gem install ecommerce-client
 
+## Configuration
+
+To access the Ecommerce API, you must provide the *token* and the *secret*:
+
+```ruby
+Ecommerce.configuration do |config|
+  config.token = 'YOUR-TOKEN'
+  config.secret = 'YOUR-SECRET'
+end
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+Ecommerce endpoints are represented as Resources. To check the list of all available Resources, please visit [Ecommerce::Resources](https://github.com/myfreecomm/ecommerce-client-ruby/tree/master/lib/ecommerce/resources) module folder.
+
+```ruby
+# listing orders of a plan
+Ecommerce::Resources::Order.find_all('specific-plan')
+=> #<Ecommerce::Resources::OrderCollection:0x000000028739b0...>
+```
 
 ## Contributing
 
