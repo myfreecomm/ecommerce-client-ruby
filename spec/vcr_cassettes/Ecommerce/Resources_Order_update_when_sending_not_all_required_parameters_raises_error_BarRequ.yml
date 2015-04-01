@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2608/
+    body:
+      encoding: UTF-8
+      string: '{"identity":"8923199e-6c43-415a-bbd1-2e302fdf8d96","client_email":"jaime.lannister@mailinator.com","client_name":"Jaime
+        Lannister KingSlayer"}'
+    headers:
+      User-Agent:
+      - Ecommerce Ruby Client v0.0.2
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cDlhWXNSU0l2TTo0MWUxMzc2OGI0N2Q1NTM0MTdiNDQxYjg2M2Jh
+  response:
+    status:
+      code: 400
+      message: BAD REQUEST
+    headers:
+      Allow:
+      - GET, PUT, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - pt-br
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 31 Mar 2015 21:11:27 GMT
+      ETag:
+      - '"7494782765793939230"'
+      Server:
+      - nginx/1.6.2
+      Vary:
+      - Authenticate, Accept, Accept-Language, Cookie
+      Content-Length:
+      - '78'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"field_errors": {"document_number": ["Este campo \u00e9 obrigat\u00f3rio."]}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2608/
+  recorded_at: Tue, 31 Mar 2015 21:11:28 GMT
+recorded_with: VCR 2.9.3

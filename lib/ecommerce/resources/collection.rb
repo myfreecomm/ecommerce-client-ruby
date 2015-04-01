@@ -5,7 +5,7 @@ module Ecommerce
     # A wrapper to Ecommerce orders API. This wrapper represents a collection of orders and it's responsible for processing pagination information as well.
     #
 
-    class OrderCollection < Base
+    class Collection < Base
 
       PAGE_REGEX = /page=(\d+)/
 
