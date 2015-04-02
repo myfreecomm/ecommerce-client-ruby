@@ -13,6 +13,7 @@ require "ecommerce/resources/order"
 require "ecommerce/resources/order_collection"
 require "ecommerce/resources/invoice_order"
 require "ecommerce/resources/invoice_order_collection"
+require "ecommerce/resources/invoice_plan"
 
 module Ecommerce
   def self.configuration

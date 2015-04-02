@@ -15,7 +15,7 @@ module Ecommerce
                   :next_payment_date
       
       #
-      # Lists all invoice of an orders and return a collection of invoice with pagination information (represented by Ecommerce::Resources::InvoiceCollection)
+      # Lists all invoice of an orders and return a collection of invoice with pagination information (represented by Ecommerce::Resources::InvoiceOrderCollection)
       #
       # [API]
       #   Method: <tt>GET /api/accounts/:account_uuid/orders/</tt>
