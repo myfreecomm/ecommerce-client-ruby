@@ -18,7 +18,7 @@ module Ecommerce
       # Lists all invoice of an orders and return a collection of invoice with pagination information (represented by Ecommerce::Resources::InvoiceOrderCollection)
       #
       # [API]
-      #   Method: <tt>GET /api/accounts/:account_uuid/orders/</tt>
+      #   Method: <tt>GET /api/orders/:slug/:id/invoices/ </tt>
       #
       #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/orders.html#listagem-das-ordens-de-compra-de-uma-conta
       #
@@ -30,10 +30,10 @@ module Ecommerce
       end
 
       #
-      # Finds an invoice of an orders
+      # Finds an invoice of an order
       #
       # [API]
-      #   Method: <tt>GET /api/accounts/:account_uuid/orders/</tt>
+      #   Method: <tt>GET /api/orders/:slug/:order_id/invoices/:id/</tt>
       #
       #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/orders.html#listagem-das-ordens-de-compra-de-uma-conta
       #
