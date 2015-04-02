@@ -49,6 +49,30 @@ describe Ecommerce::AttributeHandler do
           expect(subject.handle).to eq(DateTime.new(2014, 6, 1, 14, 17, 56))
         end
       end
+
+      context 'when parameter is nil' do
+        subject { Ecommerce::AttributeHandler.new(nil) }
+
+        it 'returns parameter' do
+          expect(subject.handle).to be_nil
+        end
+      end
+
+      context 'when parameter is blank' do
+        subject { Ecommerce::AttributeHandler.new('') }
+
+        it 'returns parameter' do
+          expect(subject.handle).to eq('')
+        end
+      end
+
+      context 'when parameter is different from String' do
+        subject { Ecommerce::AttributeHandler.new([]) }
+
+        it 'returns parameter' do
+          expect(subject.handle).to eq([])
+        end
+      end
     end
   end
 end

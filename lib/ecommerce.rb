@@ -11,6 +11,8 @@ require "ecommerce/resources/collection"
 require "ecommerce/resources/account_order"
 require "ecommerce/resources/order"
 require "ecommerce/resources/order_collection"
+require "ecommerce/resources/invoice_order"
+require "ecommerce/resources/invoice_order_collection"
 
 module Ecommerce
   def self.configuration

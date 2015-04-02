@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2704/invoices/
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"limit":20}'
+    headers:
+      User-Agent:
+      - Ecommerce Ruby Client v0.0.2
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cDlhWXNSU0l2TTo0MWUxMzc2OGI0N2Q1NTM0MTdiNDQxYjg2M2Jh
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Allow:
+      - GET, HEAD, OPTIONS
+      Content-Language:
+      - pt-br
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 02 Apr 2015 19:52:57 GMT
+      ETag:
+      - '"-4242553726325388158"'
+      Link:
+      - "<http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2704/invoices/?page=1>;
+        rel=last, <http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2704/invoices/?page=1>;
+        rel=first"
+      Server:
+      - nginx/1.6.2
+      Vary:
+      - Authenticate, Accept, Accept-Language, Cookie
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"redeemed_adjustments": [], "order_url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2704/",
+        "url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2704/invoices/2544/",
+        "created_at": "2015-04-02 15:27:55", "activated_at": "2015-04-02 15:28:49",
+        "number": 2544, "user_data": {"address_city": "RJ", "address_complement":
+        "41", "address_number": "41", "address_quarter": "Bla", "client_name": "Teste",
+        "address_state": "RJ", "client_email": "jaime.lannister@mailinator.com", "address":
+        "Rua sem numero", "document_number": "05793832000126", "zip_code": "20231030"},
+        "amount_with_adjustments": "52.00", "amount": "52.00", "paid_at": "2015-04-02
+        15:28:45", "payment_method": "buypage :: visa", "plan_data": {"slug": "rexpense-custom-monthly-brl-5250",
+        "name": "rexpense-custom-monthly-brl-5250", "description": "Rexpense monthly
+        for 5 users (10,50 BRL each)"}, "charge_date": "2015-04-02", "next_payment_date":
+        "2015-05-02"}, {"redeemed_adjustments": [], "order_url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2704/",
+        "url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2704/invoices/2545/",
+        "created_at": "2015-04-02 15:28:49", "activated_at": null, "number": 2545,
+        "user_data": {"address_city": "RJ", "address_complement": "41", "address_number":
+        "41", "address_quarter": "Bla", "client_name": "Teste", "address_state": "RJ",
+        "client_email": "jaime.lannister@mailinator.com", "address": "Rua sem numero",
+        "document_number": "05793832000126", "zip_code": "20231030"}, "amount_with_adjustments":
+        "52.00", "amount": "52.00", "paid_at": null, "payment_method": "buypage ::
+        visa", "plan_data": {"slug": "rexpense-custom-monthly-brl-5250", "name": "rexpense-custom-monthly-brl-5250",
+        "description": "Rexpense monthly for 5 users (10,50 BRL each)"}, "charge_date":
+        "2015-05-02", "next_payment_date": "2015-06-02"}]'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2704/invoices/
+  recorded_at: Thu, 02 Apr 2015 19:52:57 GMT
+recorded_with: VCR 2.9.3
