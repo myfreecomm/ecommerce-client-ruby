@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/myfreecomm/ecommerce-client-ruby.svg?branch=master)](https://travis-ci.org/myfreecomm/ecommerce-client-ruby)
 [![Code Climate](https://codeclimate.com/github/myfreecomm/ecommerce-client-ruby/badges/gpa.svg)](https://codeclimate.com/github/myfreecomm/ecommerce-client-ruby)
 [![Test Coverage](https://codeclimate.com/github/myfreecomm/ecommerce-client-ruby/badges/coverage.svg)](https://codeclimate.com/github/myfreecomm/ecommerce-client-ruby)
+[![Inline docs](http://inch-ci.org/github/myfreecomm/ecommerce-client-ruby.svg)](http://inch-ci.org/github/myfreecomm/ecommerce-client-ruby)
 
 # Ecommerce Client
 
