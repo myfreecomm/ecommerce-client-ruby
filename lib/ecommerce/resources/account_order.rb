@@ -22,7 +22,7 @@ module Ecommerce
 
       def self.find_all(account_uuid, page = 1, limit = 20)
         client.get("/api/accounts/#{account_uuid}/orders/", { body: { page: page, limit: limit } }) do |response|
-          Ecommerce::Resources::Collection.build(response)
+          Ecommerce::Resources::OrderCollection.build(response)
         end
       end
     end
