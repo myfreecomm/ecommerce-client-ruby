@@ -9,7 +9,7 @@ module Ecommerce
     class InvoiceOrder < Base
 
       attr_reader :redeemed_adjustments, :order_url, :url, :created_at, :activated_at, :number, :user_data,
-                  :amount_with_adjustments, :amount, :paid, :payment_method, :plan_data, :charge_date, 
+                  :amount_with_adjustments, :amount, :paid, :payment_method, :plan_data, :charge_date,
                   :next_payment_date
       
       #
@@ -46,7 +46,7 @@ module Ecommerce
 
       def self.build_invoice(response)
         invoice_attributes = parsed_body(response)
-        invoice_attributes.empty? ? {} : self.new(invoice_attributes)
+        invoice_attributes.empty? ? {} : new(invoice_attributes)
       end
     end
   end

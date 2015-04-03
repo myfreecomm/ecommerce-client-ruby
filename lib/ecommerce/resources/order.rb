@@ -90,7 +90,7 @@ module Ecommerce
 
       def self.build_order(response)
         order_attributes = parsed_body(response)
-        order_attributes.empty? ? {} : self.new(order_attributes)
+        order_attributes.empty? ? {} : new(order_attributes)
       end
     end
   end
