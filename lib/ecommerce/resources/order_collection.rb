@@ -4,7 +4,6 @@ module Ecommerce
     # A wrapper to Ecommerce orders API.
     #
     class OrderCollection < Collection
-
       def orders
         collection
       end

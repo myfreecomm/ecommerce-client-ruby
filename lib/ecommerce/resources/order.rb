@@ -7,7 +7,6 @@ module Ecommerce
     #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/index.html
     #
     class Order < Base
-
       attr_reader :is_paid, :address_number, :plan_change_urls, :activation_expired, :number, :is_trial,
                   :address_state, :global_account, :api_url, :document_number, :checkout_url, :active_until,
                   :charge_day, :address_quarter, :activated_at, :is_active, :user_code, :address, :is_recurring,

@@ -4,7 +4,6 @@ module Ecommerce
     # A wrapper to Ecommerce collection returns from API. This wrapper represents a collection and it's responsible for processing pagination information as well.
     #
     class Collection < Base
-
       PAGE_REGEX = /page=(\d+)/
 
       attr_reader :response, :collection, :headers

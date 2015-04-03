@@ -7,7 +7,6 @@ module Ecommerce
     #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/index.html
     #
     class AccountOrder < Base
-
       #
       # Lists all Orders of an account and return a collection with orders and pagination information (represented by Ecommerce::Resources::Collection)
       #

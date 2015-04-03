@@ -7,7 +7,6 @@ module Ecommerce
     #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/index.html
     #
     class InvoiceOrder < Base
-
       attr_reader :redeemed_adjustments, :order_url, :url, :created_at, :activated_at, :number, :user_data,
                   :amount_with_adjustments, :amount, :paid, :payment_method, :plan_data, :charge_date,
                   :next_payment_date

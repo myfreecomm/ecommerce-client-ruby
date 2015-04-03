@@ -7,7 +7,6 @@ module Ecommerce
     #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/index.html
     #
     class InvoicePlan < Base
-
       #
       # Lists all paid invoices of a plan and return a collection of invoice with 
       # pagination information (represented by Ecommerce::Resources::InvoiceOrderCollection)
