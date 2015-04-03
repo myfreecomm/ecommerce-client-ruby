@@ -10,9 +10,9 @@ module Ecommerce
       attr_reader :redeemed_adjustments, :order_url, :url, :created_at, :activated_at, :number, :user_data,
                   :amount_with_adjustments, :amount, :paid, :payment_method, :plan_data, :charge_date,
                   :next_payment_date
-      
+
       #
-      # Lists all invoice of an orders and return a collection of invoice with 
+      # Lists all invoice of an orders and return a collection of invoice with
       # pagination information (represented by Ecommerce::Resources::InvoiceOrderCollection)
       #
       # [API]
