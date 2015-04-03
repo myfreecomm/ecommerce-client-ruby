@@ -1,10 +1,8 @@
 module Ecommerce
   module Resources
-
     #
     # A wrapper to Ecommerce orders API.
     #
-
     class OrderCollection < Collection
 
       def orders
