@@ -6,7 +6,7 @@ describe Ecommerce::Resources::AccountOrder do
       subject { described_class.find_all('e5732007-7989-4372-8e72-9ec8cf6ee046') }
 
       it 'returns a find_all of orders' do
-        expect(subject.class).to eq(Ecommerce::Resources::Collection)
+        expect(subject.class).to eq(Ecommerce::Resources::OrderCollection)
         expect(subject.orders.first.plan_slug).to eq("rexpense-custom-monthly-brl-5250")
         expect(subject.orders.first.class).to eq(Ecommerce::Resources::Order)
         expect(subject.orders.count).to eq(20)

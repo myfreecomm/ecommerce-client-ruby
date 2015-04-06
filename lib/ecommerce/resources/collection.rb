@@ -1,19 +1,16 @@
 module Ecommerce
   module Resources
-
     #
-    # A wrapper to Ecommerce orders API. This wrapper represents a collection of orders and it's responsible for processing pagination information as well.
+    # A wrapper to Ecommerce collection returns from API. This wrapper represents a collection and it's responsible for processing pagination information as well.
     #
-
     class Collection < Base
-
       PAGE_REGEX = /page=(\d+)/
 
-      attr_reader :response, :orders, :headers
+      attr_reader :response, :collection, :headers
 
       def initialize(response)
         @response = response
-        @orders = []
+        @collection = []
         @headers = response.headers['Link'].split(',')
       end
 
@@ -22,7 +19,7 @@ module Ecommerce
       end
 
       def build
-        build_orders
+        build_collection
         self
       end
 
@@ -52,10 +49,8 @@ module Ecommerce
         headers.select{|n| n =~ /rel=#{rel}/}.first
       end
 
-      def build_orders
-        Ecommerce::Resources::Base.parsed_body(response).each do |order_attributes|
-          orders.push(Ecommerce::Resources::Order.new(order_attributes))
-        end
+      def build_collection
+        raise NotImplementedError
       end
     end
   end

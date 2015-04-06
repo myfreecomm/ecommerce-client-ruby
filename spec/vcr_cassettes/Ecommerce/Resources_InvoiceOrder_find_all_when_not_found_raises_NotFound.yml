@@ -1,0 +1,30 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/wrong-slug/2704/invoices/
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"limit":20}'
+    headers:
+      User-Agent:
+      - Ecommerce Ruby Client v0.0.2
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cDlhWXNSU0l2TTo0MWUxMzc2OGI0N2Q1NTM0MTdiNDQxYjg2M2Jh
+  response:
+    status:
+      code: 0
+      message: 
+    headers: {}
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+    adapter_metadata:
+      effective_url: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/wrong-slug/2704/invoices/
+  recorded_at: Thu, 02 Apr 2015 19:54:57 GMT
+recorded_with: VCR 2.9.3
