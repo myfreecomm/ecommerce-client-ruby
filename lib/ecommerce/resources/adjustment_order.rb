@@ -74,8 +74,6 @@ module Ecommerce
         end
       end
 
-      private
-
       def self.build(response)
         attributes = parsed_body(response)
         attributes.empty? ? {} : new(attributes)
