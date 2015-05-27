@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/3001/adjustments/
+    body:
+      encoding: UTF-8
+      string: '{"amount":50.6,"description":"New promotion","valid_from":"2015-05-27","valid_until":"2015-06-27"}'
+    headers:
+      User-Agent:
+      - Ecommerce Ruby Client v0.0.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cDlhWXNSU0l2TTo0MWUxMzc2OGI0N2Q1NTM0MTdiNDQxYjg2M2Jh
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Cache-Control:
+      - no-cache
+      Cache-Timeout:
+      - "-1"
+      Content-Language:
+      - pt-br
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 27 May 2015 15:10:04 GMT
+      Expires:
+      - Wed, 27 May 2015 12:10:04
+      Server:
+      - nginx/1.8.0
+      Vary:
+      - Authenticate, Accept, Accept-Language, Cookie
+      Content-Length:
+      - '376'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"valid_until": "2015-06-27", "redeemed_amount": 0, "valid_from": "2015-05-27",
+        "description": "New promotion", "url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/3001/adjustments/201/",
+        "amount": "50.6", "order_url": "http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/3001/",
+        "redemptions": []}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/3001/adjustments/
+  recorded_at: Wed, 27 May 2015 15:10:05 GMT
+recorded_with: VCR 2.9.3

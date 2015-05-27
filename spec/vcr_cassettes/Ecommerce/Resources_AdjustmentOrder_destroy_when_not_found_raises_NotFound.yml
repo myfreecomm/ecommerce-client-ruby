@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/wrong-slug/3001/adjustments/201/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ecommerce Ruby Client v0.0.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cDlhWXNSU0l2TTo0MWUxMzc2OGI0N2Q1NTM0MTdiNDQxYjg2M2Jh
+  response:
+    status:
+      code: 404
+      message: NOT FOUND
+    headers:
+      Allow:
+      - GET, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - pt-br
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 27 May 2015 15:36:06 GMT
+      Server:
+      - nginx/1.8.0
+      Vary:
+      - Authenticate, Accept, Accept-Language, Cookie
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/wrong-slug/3001/adjustments/201/
+  recorded_at: Wed, 27 May 2015 15:36:06 GMT
+recorded_with: VCR 2.9.3

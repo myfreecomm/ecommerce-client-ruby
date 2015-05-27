@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/3001/adjustments/
+    body:
+      encoding: UTF-8
+      string: '{"description":"New promotion","valid_from":"2015-05-27","valid_until":"2015-06-27"}'
+    headers:
+      User-Agent:
+      - Ecommerce Ruby Client v0.0.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cDlhWXNSU0l2TTo0MWUxMzc2OGI0N2Q1NTM0MTdiNDQxYjg2M2Jh
+  response:
+    status:
+      code: 400
+      message: BAD REQUEST
+    headers:
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Content-Language:
+      - pt-br
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 27 May 2015 15:10:44 GMT
+      ETag:
+      - '"2791279433870516591"'
+      Server:
+      - nginx/1.8.0
+      Vary:
+      - Authenticate, Accept, Accept-Language, Cookie
+      Content-Length:
+      - '69'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"field_errors": {"amount": ["Este campo \u00e9 obrigat\u00f3rio."]}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/3001/adjustments/
+  recorded_at: Wed, 27 May 2015 15:10:44 GMT
+recorded_with: VCR 2.9.3
