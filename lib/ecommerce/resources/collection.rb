@@ -11,7 +11,7 @@ module Ecommerce
       def initialize(response)
         @response = response
         @collection = []
-        @headers = response.headers['Link'].split(',')
+        @headers = response.headers['Link'].split(',') if response.headers['Link']
       end
 
       def self.build(response)
