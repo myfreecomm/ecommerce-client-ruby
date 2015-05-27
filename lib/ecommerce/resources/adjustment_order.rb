@@ -17,7 +17,7 @@ module Ecommerce
       end
 
       #
-      # Creates an Adjustment order 
+      # Creates an Adjustment order
       #
       # [API]
       #   Method: <tt>POST /api/orders/:slug/:id/adjustments/</tt>
