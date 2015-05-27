@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/3001/adjustments/201/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ecommerce Ruby Client v0.0.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cDlhWXNSU0l2TTo0MWUxMzc2OGI0N2Q1NTM0MTdiNDQxYjg2M2Jh
+  response:
+    status:
+      code: 204
+      message: NO CONTENT
+    headers:
+      Allow:
+      - GET, DELETE, HEAD, OPTIONS
+      Content-Language:
+      - pt-br
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 27 May 2015 15:36:04 GMT
+      ETag:
+      - '"-4645357772151842967"'
+      Server:
+      - nginx/1.8.0
+      Vary:
+      - Authenticate, Accept, Accept-Language, Cookie
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/3001/adjustments/201/
+  recorded_at: Wed, 27 May 2015 15:36:05 GMT
+recorded_with: VCR 2.9.3

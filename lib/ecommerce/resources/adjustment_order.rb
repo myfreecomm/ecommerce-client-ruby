@@ -7,7 +7,14 @@ module Ecommerce
     #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/index.html
     #
     class AdjustmentOrder < Base
-      attr_reader :amount, :description, :valid_until, :valid_from
+      attr_reader :url, :amount, :description, :valid_until, :valid_from
+
+      #
+      # Adjustment order API does not return the ID field
+      #
+      def id
+        url.split('/')[8].to_i
+      end
 
       #
       # Creates an Adjustment order 
@@ -19,18 +26,18 @@ module Ecommerce
       #
       def self.create(slug, order_id, params)
         client.post("/api/orders/#{slug}/#{order_id}/adjustments/", body: params) do |response|
-          build_order(response)
+          build(response)
         end
       end
 
       #
-      # Lists all Orders of a slug and return a collection with orders 
-      # and pagination information (represented by Ecommerce::Resources::OrderCollection)
+      # Lists all Adjustments orders of an order and return a collection
+      # and pagination information (represented by Ecommerce::Resources::AdjustmentOrderCollection)
       #
       # [API]
-      #   Method: <tt>GET /api/orders/:slug/</tt>
+      #   Method: <tt>GET /api/orders/:slug/adjustments/</tt>
       #
-      #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/orders.html#listagem-de-ordens-de-compra
+      #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/orders.html#listagem-das-alteracoes-de-valor-associadas-a-uma-ordem-de-compra
       #
       def self.find_all(slug, order_id, page = 1, limit = 20)
         body = { page: page, limit: limit }
@@ -40,52 +47,38 @@ module Ecommerce
       end
 
       #
-      # Finds an Order adjustment
+      # Finds an Adjustment order
       #
       # [API]
-      #   Method: <tt>GET /api/orders/:slug/:order_id/</tt>
+      #   Method: <tt>GET /api/orders/:slug/:order_id/adjustments/:id/</tt>
       #
-      #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/orders.html#detalhes-de-uma-ordem-de-compra
+      #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/orders.html#obtencao-dos-dados-de-uma-alteracao-de-valor
       #
       def self.find(slug, order_id, id)
-        client.get("/api/orders/#{slug}/#{order_id}/") do |response|
-          build_order(response)
+        client.get("/api/orders/#{slug}/#{order_id}/adjustments/#{id}/") do |response|
+          build(response)
         end
       end
 
       #
-      # Destroys an Order
+      # Destroys an Adjustment order
       #
       # [API]
-      #   Method: <tt>DELETE /api/orders/:slug/:order_id/</tt>
+      #   Method: <tt>DELETE /api/orders/:slug/:order_id/adjustments/:id/</tt>
       #
-      #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/orders.html#delete-api-orders-slug-id
+      #   Documentation: http://myfreecomm.github.io/passaporte-web/ecommerce/api/orders.html#remocao-de-uma-alteracao-de-valor
       #
-      def self.destroy(order_id, slug)
-        client.delete("/api/orders/#{slug}/#{order_id}/") do |response|
-          build_order(response)
-        end
-      end
-
-      #
-      # Updates an Order client information
-      #
-      # [API]
-      #   Method: <tt>PUT /api/orders/:slug/:order_id/</tt>
-      #
-      #   Documentation for available and required fields: http://myfreecomm.github.io/passaporte-web/ecommerce/api/orders.html#put-api-orders-slug-id
-      #
-      def self.update(order_id, slug, order_params={})
-        client.put("/api/orders/#{slug}/#{order_id}/", body: order_params) do |response|
-          build_order(response)
+      def self.destroy(order_id, slug, id)
+        client.delete("/api/orders/#{slug}/#{order_id}/adjustments/#{id}/") do |response|
+          build(response)
         end
       end
 
       private
 
-      def self.build_order(response)
-        order_attributes = parsed_body(response)
-        order_attributes.empty? ? {} : new(order_attributes)
+      def self.build(response)
+        attributes = parsed_body(response)
+        attributes.empty? ? {} : new(attributes)
       end
     end
   end

@@ -30,6 +30,8 @@ describe Ecommerce::Resources::AdjustmentOrder do
       it 'returns a find_all of orders' do
         expect(subject.class).to eq(Ecommerce::Resources::AdjustmentOrderCollection)
         expect(subject.collection.first.description).to eq('New promotion')
+        expect(subject.collection.first.url).to eq('http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/3001/adjustments/201/')
+        expect(subject.collection.first.amount).to eq(50.6)
         expect(subject.collection.first.class).to eq(Ecommerce::Resources::AdjustmentOrder)
         expect(subject.collection.count).to eq(1)
       end
@@ -46,45 +48,20 @@ describe Ecommerce::Resources::AdjustmentOrder do
 
   describe '.find', vcr: true do
     context 'when success' do
-      subject { described_class.find('rexpense-custom-monthly-brl-5250', 3001) }
+      subject { described_class.find('rexpense-custom-monthly-brl-5250', 3001, 201) }
 
-      it 'returns order object' do
-        expect(subject.is_paid).to be_falsy
-        expect(subject.address_number).to be_nil
-        expect(subject.plan_change_urls).to eq({})
-        expect(subject.activation_expired).to be_falsy
-        expect(subject.number).to eq(2609)
-        expect(subject.address_state).to be_nil
-        expect(subject.global_account).to eq('e5732007-7989-4372-8e72-9ec8cf6ee046')
-        expect(subject.api_url).to eq("http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2609/")
-        expect(subject.is_trial).to be_falsy
-        expect(subject.document_number).to be_nil
-        expect(subject.checkout_url).to eq("http://sandbox.ecommerce.myfreecomm.com.br/rexpense-custom-monthly-brl-5250/2609/checkout/")
-        expect(subject.active_until).to be_nil
-        expect(subject.charge_day).to eq(25)
-        expect(subject.address_quarter).to be_nil
-        expect(subject.activated_at).to be_nil
-        expect(subject.is_active).to be_falsy
-        expect(subject.user_code).to be_empty
-        expect(subject.address).to be_nil
-        expect(subject.is_recurring).to be_truthy
-        expect(subject.address_city).to be_nil
-        expect(subject.plan_slug).to eq("rexpense-custom-monthly-brl-5250")
-        expect(subject.address_complement).to be_nil
-        expect(subject.discounts_url).to eq("http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2609/discounts/")
-        expect(subject.created_at).to eq(DateTime.new(2015, 3, 25, 17, 55, 32))
-        expect(subject.adjustments_url).to eq("http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2609/adjustments/")
-        expect(subject.next_payment_at).to be_nil
-        expect(subject.amount).to eq(52.5)
-        expect(subject.client_email).to eq("jaime.lannister@mailinator.com")
-        expect(subject.zip_code).to be_nil
-        expect(subject.client_name).to be_empty
-        expect(subject.invoices_url).to eq("http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2609/invoices/")
+      it 'returns adjustment order object' do
+        expect(subject.amount).to eq(50.6)
+        expect(subject.description).to eq('New promotion')
+        expect(subject.valid_from).to eq(Date.new(2015, 5, 27))
+        expect(subject.valid_until).to eq(Date.new(2015, 6, 27))
+        expect(subject.url).to eq('http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/3001/adjustments/201/')
+        expect(subject.id).to eq(201)
       end
     end
 
     context 'when not found' do
-      subject { described_class.find(2609, 'wrong-slug') }
+      subject { described_class.find('wrong-slug', 3001, 201) }
 
       it 'raises NotFound' do
         expect{ subject }.to raise_error(Ecommerce::RequestError)
@@ -94,7 +71,7 @@ describe Ecommerce::Resources::AdjustmentOrder do
 
   describe '.destroy', vcr: true do
     context 'when success' do
-      subject { described_class.destroy(2609, 'rexpense-custom-monthly-brl-5250') }
+      subject { described_class.destroy(3001, 'rexpense-custom-monthly-brl-5250', 201) }
 
       it 'returns empty body' do
         expect(subject).to be_empty
@@ -102,59 +79,9 @@ describe Ecommerce::Resources::AdjustmentOrder do
     end
 
     context 'when not found' do
-      subject { described_class.destroy(2609, 'wrong-slug') }
+      subject { described_class.destroy(3001, 'wrong-slug', 201) }
 
       it 'raises NotFound' do
-        expect{ subject }.to raise_error(Ecommerce::RequestError)
-      end
-    end
-  end
-
-  describe '.update', vcr: true do
-    let(:params) { { document_number: "976.305.273-49", identity: "8923199e-6c43-415a-bbd1-2e302fdf8d96", client_email: "jaime.lannister@mailinator.com", client_name: "Jaime Lannister KingSlayer" } }
-
-    subject { described_class.update(2608, "rexpense-custom-monthly-brl-5250", params) }
-
-    context 'with success' do
-      it 'returns order information on body' do
-        expect(subject.is_paid).to be_falsy
-        expect(subject.address_number).to be_nil
-        expect(subject.plan_change_urls).to eq({"rexpense-beta"=>"http://sandbox.ecommerce.myfreecomm.com.br/rexpense-custom-monthly-brl-5250/2608/change/rexpense-beta/"})
-        expect(subject.activation_expired).to be_falsy
-        expect(subject.number).to eq(2608)
-        expect(subject.address_state).to eq('')
-        expect(subject.global_account).to eq('e5732007-7989-4372-8e72-9ec8cf6ee046')
-        expect(subject.api_url).to eq("http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2608/")
-        expect(subject.is_trial).to be_falsy
-        expect(subject.document_number).to eq("97630527349")
-        expect(subject.checkout_url).to eq("http://sandbox.ecommerce.myfreecomm.com.br/rexpense-custom-monthly-brl-5250/2608/checkout/")
-        expect(subject.active_until).to be_nil
-        expect(subject.charge_day).to eq(25)
-        expect(subject.address_quarter).to be_nil
-        expect(subject.activated_at).to be_nil
-        expect(subject.is_active).to be_falsy
-        expect(subject.user_code).to be_empty
-        expect(subject.address).to be_nil
-        expect(subject.is_recurring).to be_truthy
-        expect(subject.address_city).to be_nil
-        expect(subject.plan_slug).to eq("rexpense-custom-monthly-brl-5250")
-        expect(subject.address_complement).to eq('')
-        expect(subject.discounts_url).to eq("http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2608/discounts/")
-        expect(subject.created_at).to eq(DateTime.new(2015, 3, 25, 17, 54, 42))
-        expect(subject.adjustments_url).to eq("http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2608/adjustments/")
-        expect(subject.next_payment_at).to be_nil
-        expect(subject.amount).to eq(52.5)
-        expect(subject.client_email).to eq("jaime.lannister@mailinator.com")
-        expect(subject.zip_code).to be_nil
-        expect(subject.client_name).to eq("Jaime Lannister KingSlayer")
-        expect(subject.invoices_url).to eq("http://sandbox.ecommerce.myfreecomm.com.br/api/orders/rexpense-custom-monthly-brl-5250/2608/invoices/")
-      end
-    end
-
-    context 'when sending not all required parameters' do
-      before { params.delete(:document_number) }
-
-      it 'raises error BarRequest' do
         expect{ subject }.to raise_error(Ecommerce::RequestError)
       end
     end
